@@ -27,12 +27,14 @@ print(linear_fit([3.1415, 2.7182, 1.4142, 1.732, 0.5772, 2.6854]))
 #Accepted ans in this format
 
 from typing import List, Tuple
-from decimal import Decimal
+from decimal import Decimal,getcontext
 def linear_fit(inputs: List[float]) -> Tuple[float, float]:
     """
     :type inputs: List[float]
     :rtype: Tuple[float, float]
-    """
+    # """
+    # getcontext().prec = 50  #Optional Set precision to 50 decimal places
+    
     n = Decimal(len(inputs))
     sum_x = sum(Decimal(x) for x in inputs)
     sum_y = sum(Decimal(i) for i in range(len(inputs)))
